@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ambulance Routing System</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="header">🚑 Real-Time Ambulance Routing</div>
+
+<div id="map"></div>
+
+<div class="info">
+  <p><b>Speed:</b> <span id="speed">0</span> km/h</p>
+  <p><b>Status:</b> <span id="status">Idle</span></p>
+</div>
+
+<div class="controls">
+ <button onclick="openModal()">🚑 Start Route</button>
+  <button onclick="simulate()">Start Simulation</button>
+</div>
+<!-- 🚑 Route Popup -->
+<div id="routeModal" class="modal">
+
+  <div class="modal-content">
+    <h2>Select Route</h2>
+
+    <label>Start Location:</label>
+    <select id="startSelect">
+  <option value="current">Use Current Location</option>
+</select>
+
+<select id="destSelect">
+  <option value="">Select Destination</option>
+</select>
+
+    <br><br>
+
+    <button onclick="confirmMultipleRoutes()">🚑 Find Routes</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
